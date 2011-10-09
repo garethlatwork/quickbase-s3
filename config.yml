@@ -1,0 +1,148 @@
+
+# copy_files: Set to false to move (not copy) files from QuickBase to Amazon S3.  Default is true.
+copy_files: true
+
+# username: The QuickBase user name to use for downloading files from QuickBase and updating the related records. REQUIRED.
+username: username@email.com
+
+# password: The QuickBase password to use for downloading files from QuickBase and updating the related records. REQUIRED. 
+password: password
+
+# realm: If your QuickBase applications are on (e.g.) https://my_company.quickbase.com, change www to my_company. Default is www. 
+realm: www
+
+#apptoken: A QuickBase Application Token for more secure access to QuickBase 
+#apptoken: sdfsdfsdfsadsdfaadasdfafd
+
+# quickbase_table_?: Use up to 100 QuickBase tables or applications to control which tables to  process. REQUIRED. 
+# Important: Only the tables with a report matching the 'file_list_report_name' entry below will be included. 
+# If quickbase_table_1 is ALL TABLES, all accessible tables will be processed.
+# If the entry appears to be the ID of a Application, all the application's child tables will be processed.
+# If the entry appears to be the ID of a Table, the Table will be processed.
+# If the entry is the name of a Application, all the Application's child tables will be processed.
+quickbase_table_1: ALL TABLES
+
+# file_list_report_name: The name of the QuickBase report to use in every table, to control which File Attachment records and fields should be processed.
+# Default is z-Files->S3.
+file_list_report_name: z-Files->S3
+
+# aws_access_key: Your Amazon Web Services access key. REQUIRED. No default value. 
+aws_access_key: 0XXMMP8XMMMM2 
+
+# aws_access_key: Your Amazon Web Services secret key.  REQUIRED. No default value.
+aws_secret_key: ErdDadfasdf0EQReXXXXZZZZbEYGbTHQohVSP 
+
+# bucket_name: The name of the top-level Amazon S3 folder where uploaded files will be stored. Default is quickbase_files.
+bucket_name: quickbase_files 
+
+# download_url: The base URL for downloading files from S3. Default is https://quickbase-s3.heroku.com/download_file?key=.
+download_url: https://quickbase-s3.heroku.com/download_file?key= 
+
+# s3_url_field_name_addition: The text to append to your QuickBase File Attachment field names; used to create the related S3 download URL field. 
+# Default is ' - s3 url'.
+s3_url_field_name_addition: ' - s3 url' 
+
+# s3_file_field_name_addition: The text to append to your QuickBase File Attachment field names; used to create the related S3 file name field. 
+# Default is ' - s3 file'.
+s3_file_field_name_addition: ' - s3 file' 
+
+#s3_key_format: The format of the key for files uploaded to Amazon S3.  Each '/' creates a 'sub-folder' in Amazon S3.
+s3_key_format: "%{realm} table: %{table_name} (id: %{table_id})/record: %{record_id}, field: %{field_name}, (id: %{field_id}), time: %{time}/%{file_name}"
+
+# tmp_dir_name: The name of the local (temporary) folder to use while copying files from QuickBase to Amazon S3. Default is ./tmp.
+tmp_dir_name: ./tmp
+
+# remove_temp_files: Set to true to remove the local (temporary) folder to use while copying files from QuickBase to Amazon S3.  Default is false.
+remove_temp_files: false
+
+# no_log_file: Set to true if you do NOT want to create a local log file.  Default is false.
+no_log_file: false
+
+# logfile: The name of the local file to use for logging errors and information. Default is file_mover.log, in the same location as this file.
+logfile: file_mover.log
+
+#logfile_age: How often to backup up the local log file.  Must be one of daily, weekly or monthly.  Default is daily.
+logfile_age: daily
+
+# log_errors_to_quickbase: Set to true to add a QuickBase record for each error log entry.  Default is false. 
+log_errors_to_quickbase: false
+
+# log_info_to_quickbase: Set to true to add a QuickBase record for each informational (not error) log entry.  Default is false.
+log_info_to_quickbase: false
+
+# quickbase_log_entry_table_id: The QuickBase table ID to use for logging information to QuickBase.  Not required.
+quickbase_log_entry_table_id: bhi7xxxzz
+
+# quickbase_log_entry_field_name: The name of the QuickBase field to use for each log entry written to QuickBase.  Default is Log Entry.
+quickbase_log_entry_field_name: Log Entry
+
+# upload_log_file_to_quickbase: Set to true to upload the log file to QuickBase  after this utility has finished running.  Default is false.
+upload_log_file_to_quickbase: false
+
+# quickbase_log_file_table_id: The ID of the QuickBase table to use for storing log files.
+# Required if upload_log_file_to_quickbase is true.
+quickbase_log_file_table_id: bhi7xxxzz
+
+# quickbase_log_file_field_name: The name of the QuickBase File Attachment field use to store Log Files.  Default is Log File.
+quickbase_log_file_field_name: Log File
+
+# email_errors_via_gmail: Set to true to email each error log separately, via gmail.  Default is false.
+email_errors_via_gmail: false
+
+# log_info_via_gmail: Set to true to email each informational (not error) log separately, via gmail.  Default is false.
+log_info_via_gmail: false
+
+# email_log_file: Set to true to email the log file contents after this utility has finished running. Default is false.
+email_log_file: false
+
+# gmail_username: The gmail email address to use for emailing log entries. 
+# Required if any one of email_log_file, email_errors_via_gmail, or log_info_via_gmail is true.
+gmail_username: username@gmail.com
+
+# gmail_password: The gmail password for the above email address. 
+# Required if any one of email_log_file, email_errors_via_gmail, or log_info_via_gmail is true.
+gmail_password: password
+
+# gmail_subject: The subject line to use when logging information via gmail.  Default is QuickBase to S3 File Mover Log.
+gmail_subject: QuickBase to S3 File Mover Log
+
+# email_recipient: The email address to which email log entries should be sent (via gmail). 
+# Required if any one of email_log_file, email_errors_via_gmail, or log_info_via_gmail is true.
+email_recipient: recipient@email.com
+
+# debug: Set this to true to print log messages to the screen. Default is false.
+debug: false 
+
+# debug_quickbase: Set this to true to print QuickBase API information to the screen.  Default is false.
+debug_quickbase: false
+
+# debug_simpleworker: Set this to true to run SimpleWorker locally instead of in the cloud.  Default is false.
+debug_simpleworker: false
+
+# sw_access_key: Your SimpleWorker access key (for running this service in the cloud: https://www.simpleworker.com/). 
+# Required in order to run the File Mover as a background job.
+sw_access_key: 7cc9e5ccc15881292cxxxxx2481e7c981e7c
+
+# sw_access_key: Your SimpleWorker secret key (for running this service in the cloud: https://www.simpleworker.com/). 
+# Required in order to run the File Mover as a background job.
+sw_secret_key: 8c8afcccc9af4bbbb4465xdse5d5a
+
+#start_time: when to start the background job on SimpleWorker. 
+start_time: ASAP
+
+# timezone: your time zone 
+#timezone:
+
+#frequency: how frequently to run the background job on SimpleWorker.
+frequency: 'N/A - Don't Repeat'
+
+# use_environmment_variables: set this to true to allow environment variables to override the
+# configuration settings in this file
+use_environmment_variables: false
+
+# site_owner_gmail_address: used for information requests from the web site
+site_owner_gmail_address:  username@gmail.com
+
+# site_owner_gmail_address: used for information requests from the web site
+site_owner_gmail_password: password
+
