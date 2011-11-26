@@ -47,7 +47,9 @@ class FileMoverJobLauncher
           sw_params[:start_at] = current_time + (((hour+24) - current_hour)*60*60)
         else  
           sw_params[:start_at] = current_time
-        end          
+        end
+        sw_params[:start_at] -=  (current_time.min() * 60)
+        sw_params[:start_at] -=  (current_time.sec)
       end  
     end
     if params["frequency"] and params["frequency"] != "N/A - Don't Repeat"
