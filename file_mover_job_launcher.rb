@@ -9,20 +9,20 @@ class FileMoverJobLauncher
     @move_files = move_files
   end	
 
-  def config_simple_worker
-     SimpleWorker.configure {|swconfig|
-        swconfig.access_key = @params["sw_access_key"] 
-        swconfig.secret_key = @params["sw_secret_key"]
+  def config_iron_worker
+     IronWorker.configure { |iwconfig|
+        iwconfig.token = @params["iw_token"]
+        iwconfig.project_id = @params["iw_project_id"]
      }
   end
 
   def launch_file_mover_job
     @params["copy_files"] = @move_files ? "false" : "true"
-     config_simple_worker
+     config_iron_worker
      fmj = FileMoverJob.new
      fmj.params = @params.dup
      sw_params = get_sw_params(@params)
-     if @params["debug_simpleworker"] == "true"
+     if @params["debug_ironworker"] == "true"
        fmj.run_local
      elsif sw_params
        fmj.schedule(sw_params)
