@@ -117,15 +117,15 @@ debug: false
 debug_quickbase: false
 
 # debug_simpleworker: Set this to true to run SimpleWorker locally instead of in the cloud.  Default is false.
-debug_simpleworker: false
+debug_ironworker: false
 
-# sw_access_key: Your SimpleWorker access key (for running this service in the cloud: https://www.simpleworker.com/). 
+# iw_token: Your IronWorker Token (for running this service in the cloud: https://www.iron.io).
 # Required in order to run the File Mover as a background job.
-sw_access_key: 7cc9e5ccc15881292cxxxxx2481e7c981e7c
+iw_token: TOKEN
 
-# sw_access_key: Your SimpleWorker secret key (for running this service in the cloud: https://www.simpleworker.com/). 
+# iw_project_id: Your IronWorker Project ID (for running this service in the cloud: https://www.iron.io).
 # Required in order to run the File Mover as a background job.
-sw_secret_key: 8c8afcccc9af4bbbb4465xdse5d5a
+iw_project_id: PROJECT_ID
 
 #start_time: when to start the background job on SimpleWorker. 
 start_time: ASAP

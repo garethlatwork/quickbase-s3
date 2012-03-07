@@ -1,9 +1,8 @@
 
-require 'simple_worker'
+require 'iron_worker'
 require_relative 'file_mover'
 
-class FileMoverJob < SimpleWorker::Base
-
+class FileMoverJob < IronWorker::Base
   attr_accessor :params
 
   merge_gem "quickbase_client"
