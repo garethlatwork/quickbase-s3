@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RUBY_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="activesupport (v3.2.1, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.0.17, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="daemons (v1.1.4, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="eventmachine (v1.0.0.beta.4, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="i18n (v0.6.0, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="iron_worker (v2.3.12, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.17.2, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.1.0, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack (v1.4.1, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-protection (v1.2.0, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rest (v0.1.0, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rest-client (v1.6.7, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sinatra (v1.3.2, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="thin (v1.2.11, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tilt (v1.3.3, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.32, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="zip (v2.0.2, Ruby SDK (/usr/local/bin/ruby)) [gem]" level="application" />
+  </component>
+</module>
+
