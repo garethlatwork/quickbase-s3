@@ -36,7 +36,7 @@ aws_secret_key: ErdDadfasdf0EQReXXXXZZZZbEYGbTHQohVSP
 bucket_name: quickbase_files 
 
 # download_url: The base URL for downloading files from S3. Default is https://quickbase-s3.heroku.com/download_file?key=.
-download_url: https://quickbase-s3.heroku.com/download_file?key= 
+download_url: https://quickbase-s3.herokuapp.com/download_file?key= 
 
 # s3_url_field_name_addition: The text to append to your QuickBase File Attachment field names; used to create the related S3 download URL field. 
 # Default is ' - s3 url'.
