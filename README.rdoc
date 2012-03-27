@@ -2,7 +2,7 @@
 
 Copy or move QuickBase File Attachments to Amazon S3.
 
-An instance of the app is running at https://quickbase-s3.heroku.com .
+An instance of the app is running at https://quickbase-s3.herokuapp.com .
 
 = License
 
